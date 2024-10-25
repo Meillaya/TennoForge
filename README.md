@@ -1,4 +1,15 @@
-# TennoForge
+<div align="center">
+  <img src="assets/favicon.svg" alt="TennoForge Logo">
+</div>
+
+<div align="center">
+  <h1>
+    <span style="color: #9B4DCA">TENNO</span><span style="color: #FFFFFF">FORGE</span>
+  </h1>
+</div>
+
+
+![Splash Screen](assets/tennoforge.png)
 
 A modern, open-source Warframe companion app for advanced modding and builds.
 

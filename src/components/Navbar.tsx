@@ -28,9 +28,10 @@ export default function Navbar() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-xl font-bold text-wf-primary"
+              className="text-xl font-bold"
             >
-              BuildFrame
+              <span className="text-wf-primary">TENNO</span>
+              <span className="text-white">FORGE</span>
             </motion.div>
           </Link>
 
