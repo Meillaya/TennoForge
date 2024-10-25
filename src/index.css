@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-wf-dark text-gray-100 font-body antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-wf-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-wf-dark-600 rounded-full hover:bg-wf-purple-400/50 transition-colors;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-wf-purple-400 ring-offset-2 ring-offset-wf-dark;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-wf-purple-400 text-white font-semibold rounded-md 
+           hover:bg-wf-purple-500 transition-all duration-200 ease-in-out
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-wf-purple-400 focus:ring-offset-2 focus:ring-offset-wf-dark
+           active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-4 py-2 bg-wf-dark-700 text-gray-100 font-semibold rounded-md
+           hover:bg-wf-dark-600 transition-all duration-200 ease-in-out
+           border border-wf-dark-600 hover:border-wf-purple-400/30
+           focus:outline-none focus:ring-2 focus:ring-wf-purple-400 focus:ring-offset-2 focus:ring-offset-wf-dark
+           active:scale-95;
+  }
+  
+  .card {
+    @apply bg-wf-dark-800 rounded-lg border border-wf-dark-600 p-6 
+           hover:border-wf-purple-400/30 transition-all duration-200
+           backdrop-blur-sm backdrop-filter;
+  }
+
+  .input {
+    @apply bg-wf-dark-700 border border-wf-dark-600 rounded-md px-4 py-2 
+           focus:outline-none focus:border-wf-purple-400/50 text-gray-100
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed
+           placeholder:text-gray-500;
+  }
+
+  .glass-effect {
+    @apply bg-wf-dark-800/80 backdrop-blur-md backdrop-filter;
+  }
+
+  /* Loading skeleton animation */
+  .skeleton {
+    @apply animate-pulse bg-wf-dark-700 rounded;
+  }
+
+  /* Page transitions */
+  .page-enter {
+    @apply opacity-0 translate-y-4;
+  }
+  .page-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-300 ease-out;
+  }
+  .page-exit {
+    @apply opacity-100;
+  }
+  .page-exit-active {
+    @apply opacity-0 -translate-y-4 transition-all duration-300 ease-in;
+  }
+
+  /* Toast animations */
+  .toast-enter {
+    @apply transform translate-x-full opacity-0;
+  }
+  .toast-enter-active {
+    @apply transform translate-x-0 opacity-100 transition-all duration-300 ease-out;
+  }
+  .toast-exit {
+    @apply transform translate-x-0 opacity-100;
+  }
+  .toast-exit-active {
+    @apply transform translate-x-full opacity-0 transition-all duration-300 ease-in;
+  }
+
+  /* Mobile menu animations */
+  .mobile-menu-enter {
+    @apply transform -translate-x-full;
+  }
+  .mobile-menu-enter-active {
+    @apply transform translate-x-0 transition-all duration-300 ease-out;
+  }
+  .mobile-menu-exit {
+    @apply transform translate-x-0;
+  }
+  .mobile-menu-exit-active {
+    @apply transform -translate-x-full transition-all duration-300 ease-in;
+  }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
